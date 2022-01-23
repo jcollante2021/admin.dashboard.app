@@ -72,6 +72,17 @@ export default function WidgetSm() {
                         Display
                     </button>
                 </li>
+                <li className="widgetSmListItem">
+                    <img className="widgetSmImg" src="https://placekitten.com/268/305" alt="foto de perfil de usuario" />
+                    <div className="widgetSmUser">
+                        <span className="widgetSmUsername">Patricia Lagraña</span>
+                        <span className="widgetSmUserTitle">Ama de Casa</span>
+                    </div>
+                    <button className="widgetSmButton">
+                        <Visibility className="widgetSmIcon"/>
+                        Display
+                    </button>
+                </li>
             </ul>
         </div>
     )

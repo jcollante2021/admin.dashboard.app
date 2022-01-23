@@ -1,9 +1,10 @@
 import "./widgetLg.css"
+import { FiberManualRecord } from '@material-ui/icons';
 
 export default function WidgetLg() {
 
     const Button = ({ type }) => {
-        return <button className={"widgetLgButton " + type}> {type} </button>;
+        return <button className={"widgetLgButton " + type}> <FiberManualRecord className="widgetLgStatusIcon"/>{type} </button>;
     }
     return (
         <div className="widgetLg">
@@ -28,7 +29,7 @@ export default function WidgetLg() {
                 </tr>
                 <tr className="widgetLgTr">
                     <td className="widgetLgUser">
-                        <img src="https://placekitten.com/200/200" alt="" className="widgetLgImg" />
+                        <img src="https://placekitten.com/400/400" alt="" className="widgetLgImg" />
                         <span className="widgetLgName">Pablo Jimenez</span>
                     </td>
                     <td className="widgetLgDate">14 Dic 2021</td>
@@ -39,7 +40,7 @@ export default function WidgetLg() {
                 </tr>
                 <tr className="widgetLgTr">
                     <td className="widgetLgUser">
-                        <img src="https://placekitten.com/152/200" alt="" className="widgetLgImg" />
+                        <img src="https://placekitten.com/500/500" alt="" className="widgetLgImg" />
                         <span className="widgetLgName">Agustin del Valle</span>
                     </td>
                     <td className="widgetLgDate">14 Dic 2021</td>
@@ -50,7 +51,7 @@ export default function WidgetLg() {
                 </tr>
                 <tr className="widgetLgTr">
                     <td className="widgetLgUser">
-                        <img src="https://placekitten.com/120/100" alt="" className="widgetLgImg" />
+                        <img src="https://placekitten.com/345/201" alt="" className="widgetLgImg" />
                         <span className="widgetLgName">Nadia Espinosa</span>
                     </td>
                     <td className="widgetLgDate">12 Dic 2021</td>
