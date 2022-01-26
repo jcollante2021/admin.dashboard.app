@@ -1,11 +1,20 @@
 import "./userList.css"
 import { DataGrid } from '@material-ui/data-grid';
 import { DeleteOutline } from "@material-ui/icons";
-import {userRows} from "../../activityData.js"
+import { userRows } from "../../activityData.js"
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function UserList() {
+
+    const [data, setData] = useState(userRows)
+
+    const handleDelete = (id) => {
+        setData(data.filter((item)=> item.id !== id));
+    }
+
     const columns = [
-            { field: 'id', headerName: 'ID', width: 70 },
+            { field: 'id', headerName: 'ID', width: 100 },
             { field: 'user', headerName: 'Usuario', width: 250, renderCell: (params) =>{
                 return(
                     <div className="userListUser">
@@ -20,8 +29,10 @@ export default function UserList() {
             { field: 'actions', headerName: 'Acciones', width: 160, renderCell: (params) =>{
                 return(
                     <>
-                        <button className="userListEdit">Editar</button>
-                        <DeleteOutline className="userListDelete"/>
+                        <Link to={"/users/"+params.row.id}>
+                            <button className="userListEdit">Editar</button>
+                        </Link>
+                        <DeleteOutline className="userListDelete" onClick={() => handleDelete(params.row.id)} />
                     </>
                 )
             }},
@@ -30,7 +41,7 @@ export default function UserList() {
         
     return (
         <div className="userList">
-            <DataGrid rows={userRows} disableSelectionOnClick columns={columns} pageSize={6} checkboxSelection disableSelectionOnClick />
+            <DataGrid rows={data} disableSelectionOnClick columns={columns} pageSize={6} checkboxSelection disableSelectionOnClick />
         </div>
     )
 }
